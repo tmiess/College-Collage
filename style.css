@@ -39,3 +39,18 @@
     height: 300px;
     margin: 10px auto;
 }
+
+html {
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    color: black;
+}
+
+h5 {
+    color: white;
+    display: block;
+}

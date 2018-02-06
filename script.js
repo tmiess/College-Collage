@@ -19,21 +19,40 @@ function displayColor(userInput, column) {
         console.log("color code for " + collegeName + " is " + newColor);
         $("#color" + column).css("background-color", newColor);
         $("#color" + column).text(collegeName);
+        testForMatch(color, newColor);
     }
     else {
         console.log("no color match found");
     }
 }
 
-// function testForMatch {
-//     //takes the college team color and see whether or not it has a match
-// }
+function testForMatch(color, newColor) {
+    //takes the college team color and see whether or not it has a match
+    //matches found so far: arizona and rutgers, iowa state and nebraska, nc state and utah and texas tech!
+    var indexes = [],
+        i = -1;
+    while ((i = color.indexOf(newColor, i + 1)) != -1) {
+        if (newColor === color[i]) {
+            indexes.push(i);
+            var colorMatch = college[i];
+            console.log("college with this color: " + colorMatch);
+        }
+
+    }
+    if (indexes.length > 1) {
+        console.log("matches found!");
+    }
+    else {
+        console.log("unique color!");
+    }
+    console.log("number of " + newColor + ":" + indexes.length);
+}
 
 $(document).ready(function() {
     console.log("script.js connected");
 
-    console.log(college.length);
-    console.log(color.length);
+    console.log("number of colleges: " + college.length);
+    console.log("number of colors: " + color.length);
 
     $("#name1").keypress(function(e) {
         var key = e.which;
