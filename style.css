@@ -40,6 +40,10 @@
     margin: 10px auto;
 }
 
+#blackboard {
+    background-color: black;
+}
+
 html {
     font-family: GillSans, Calibri, Trebuchet, sans-serif;
     text-align: center;
@@ -48,9 +52,21 @@ html {
 
 h1 {
     color: black;
+    font-family: 'Fredericka the Great',
+    cursive;
 }
 
 h5 {
     color: white;
     display: block;
 }
+
+body {
+    background-color: darkgreen;
+}
+
+/*font-family: 'Nova Flat', cursive;*/
+
+/*font-family: 'Graduate', cursive;*/
+
+/*font-family: 'Fredericka the Great', cursive;*/
