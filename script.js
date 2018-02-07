@@ -55,7 +55,6 @@ $(document).ready(function() {
     console.log("number of colors: " + color.length);
 
     $("#name1").keypress(function(e) {
-        console.log("name1 listening");
         var key = e.which;
         if (key == 13) // the enter key code
         {

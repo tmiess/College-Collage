@@ -83,7 +83,7 @@
 }
 
 .blackboard {
-    background-color: black;
+    background-color: transparent;
 }
 
 html {
@@ -104,7 +104,12 @@ h5 {
 }
 
 body {
-    background-color: black;
+    background-image: url(https://image.freepik.com/free-photo/blackboard_1205-374.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 2000px 1024px;
+
 }
 
 /*font-family: 'Nova Flat', cursive;*/
