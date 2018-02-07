@@ -1,46 +1,88 @@
 #color1 {
     background-color: #9e1b32;
     width: 100%;
-    height: 300px;
+    height: 200px;
     margin: 10px auto;
 }
 
 #color2 {
-    background-color: #cc0033;
+    background-color: #4B9CD3;
     width: 100%;
-    height: 300px;
+    height: 200px;
     margin: 10px auto;
 }
 
 #color3 {
-    background-color: #8c1d40;
+    background-color: #001a57;
     width: 100%;
-    height: 300px;
+    height: 200px;
     margin: 10px auto;
 }
 
 #color4 {
     background-color: #9D2235;
     width: 100%;
-    height: 300px;
+    height: 200px;
     margin: 10px auto;
 }
 
 #color5 {
     background-color: #e87722;
     width: 100%;
-    height: 300px;
+    height: 200px;
     margin: 10px auto;
 }
 
 #color6 {
-    background-color: #9e1b32;
+    background-color: #d44500;
     width: 100%;
-    height: 300px;
+    height: 200px;
     margin: 10px auto;
 }
 
-#blackboard {
+#color7 {
+    background-color: #FF8200;
+    width: 100%;
+    height: 200px;
+    margin: 10px auto;
+}
+
+#color8 {
+    background-color: #461d7c;
+    width: 100%;
+    height: 200px;
+    margin: 10px auto;
+}
+
+#color9 {
+    background-color: #8C1515;
+    width: 100%;
+    height: 200px;
+    margin: 10px auto;
+}
+
+#color10 {
+    background-color: #cc0000;
+    width: 100%;
+    height: 200px;
+    margin: 10px auto;
+}
+
+#color11 {
+    background-color: #512888;
+    width: 100%;
+    height: 200px;
+    margin: 10px auto;
+}
+
+#color12 {
+    background-color: #4B9CD3;
+    width: 100%;
+    height: 200px;
+    margin: 10px auto;
+}
+
+.blackboard {
     background-color: black;
 }
 
@@ -51,7 +93,7 @@ html {
 }
 
 h1 {
-    color: black;
+    color: white;
     font-family: 'Fredericka the Great',
     cursive;
 }
@@ -62,7 +104,7 @@ h5 {
 }
 
 body {
-    background-color: darkgreen;
+    background-color: black;
 }
 
 /*font-family: 'Nova Flat', cursive;*/

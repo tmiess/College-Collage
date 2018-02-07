@@ -55,6 +55,7 @@ $(document).ready(function() {
     console.log("number of colors: " + color.length);
 
     $("#name1").keypress(function(e) {
+        console.log("name1 listening");
         var key = e.which;
         if (key == 13) // the enter key code
         {
@@ -123,6 +124,78 @@ $(document).ready(function() {
             // return false;
             var userInput = $("#name6").val().trim();
             var column = 6;
+            displayColor(userInput, column);
+        }
+    });
+    $("#name7").keypress(function(e) {
+        var key = e.which;
+        if (key == 13) // the enter key code
+        {
+            console.log("enter button 7 works");
+            // $('input[name = butAssignProd]').click();
+            // return false;
+            var userInput = $("#name7").val().trim();
+            var column = 7;
+            displayColor(userInput, column);
+        }
+    });
+    $("#name8").keypress(function(e) {
+        var key = e.which;
+        if (key == 13) // the enter key code
+        {
+            console.log("enter button 8 works");
+            // $('input[name = butAssignProd]').click();
+            // return false;
+            var userInput = $("#name8").val().trim();
+            var column = 8;
+            displayColor(userInput, column);
+        }
+    });
+    $("#name9").keypress(function(e) {
+        var key = e.which;
+        if (key == 13) // the enter key code
+        {
+            console.log("enter button 9 works");
+            // $('input[name = butAssignProd]').click();
+            // return false;
+            var userInput = $("#name9").val().trim();
+            var column = 9;
+            displayColor(userInput, column);
+        }
+    });
+    $("#name10").keypress(function(e) {
+        var key = e.which;
+        if (key == 13) // the enter key code
+        {
+            console.log("enter button 10 works");
+            // $('input[name = butAssignProd]').click();
+            // return false;
+            var userInput = $("#name10").val().trim();
+            var column = 10;
+            displayColor(userInput, column);
+        }
+    });
+    $("#name11").keypress(function(e) {
+        var key = e.which;
+        if (key == 11) // the enter key code
+        {
+            console.log("enter button 6 works");
+            // $('input[name = butAssignProd]').click();
+            // return false;
+            var userInput = $("#name11").val().trim();
+            var column = 11;
+            displayColor(userInput, column);
+        }
+    });
+    $("#name12").keypress(function(e) {
+        var key = e.which;
+        if (key == 13) // the enter key code
+        {
+            console.log("enter button 12 works");
+            // $('input[name = butAssignProd]').click();
+            // return false;
+            var userInput = $("#name12").val().trim();
+            var column = 12;
             displayColor(userInput, column);
         }
     });
