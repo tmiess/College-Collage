@@ -54,148 +54,36 @@ $(document).ready(function() {
     console.log("number of colleges: " + college.length);
     console.log("number of colors: " + color.length);
 
-    $("#name1").keypress(function(e) {
-        var key = e.which;
-        if (key == 13) // the enter key code
-        {
-            console.log("enter button 1 works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
-            var userInput = $("#name1").val().trim();
-            var column = 1;
-            displayColor(userInput, column);
+    // jquery functions for when colleges are entered
+
+    var theParent = document.querySelector("#theMothership");
+    theParent.addEventListener("click", findCollege, false);
+
+    function findCollege(e) {
+        if (e.target !== e.currentTarget) {
+            var clickedItem = e.target.id;
+            alert("Hello " + clickedItem);
         }
-    });
-    $("#name2").keypress(function(e) {
+        e.stopPropagation();
+    }
+
+    $(".blackboard").keypress(function(e) {
         var key = e.which;
         if (key == 13) // the enter key code
         {
-            console.log("enter button 2 works");
+            console.log("enter button x works");
             // $('input[name = butAssignProd]').click();
             // return false;
-            var userInput = $("#name2").val().trim();
-            var column = 2;
-            displayColor(userInput, column);
-        }
-    });
-    $("#name3").keypress(function(e) {
-        var key = e.which;
-        if (key == 13) // the enter key code
-        {
-            console.log("enter button 3 works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
-            var userInput = $("#name3").val().trim();
-            var column = 3;
-            displayColor(userInput, column);
-        }
-    });
-    $("#name4").keypress(function(e) {
-        var key = e.which;
-        if (key == 13) // the enter key code
-        {
-            console.log("enter button 4 works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
-            var userInput = $("#name4").val().trim();
-            var column = 4;
-            displayColor(userInput, column);
-        }
-    });
-    $("#name5").keypress(function(e) {
-        var key = e.which;
-        if (key == 13) // the enter key code
-        {
-            console.log("enter button 5 works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
-            var userInput = $("#name5").val().trim();
-            var column = 5;
-            displayColor(userInput, column);
-        }
-    });
-    $("#name6").keypress(function(e) {
-        var key = e.which;
-        if (key == 13) // the enter key code
-        {
-            console.log("enter button 6 works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
-            var userInput = $("#name6").val().trim();
-            var column = 6;
-            displayColor(userInput, column);
-        }
-    });
-    $("#name7").keypress(function(e) {
-        var key = e.which;
-        if (key == 13) // the enter key code
-        {
-            console.log("enter button 7 works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
-            var userInput = $("#name7").val().trim();
-            var column = 7;
-            displayColor(userInput, column);
-        }
-    });
-    $("#name8").keypress(function(e) {
-        var key = e.which;
-        if (key == 13) // the enter key code
-        {
-            console.log("enter button 8 works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
-            var userInput = $("#name8").val().trim();
-            var column = 8;
-            displayColor(userInput, column);
-        }
-    });
-    $("#name9").keypress(function(e) {
-        var key = e.which;
-        if (key == 13) // the enter key code
-        {
-            console.log("enter button 9 works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
-            var userInput = $("#name9").val().trim();
+            var userInput = $("#namex").val().trim();
             var column = 9;
             displayColor(userInput, column);
         }
     });
-    $("#name10").keypress(function(e) {
-        var key = e.which;
-        if (key == 13) // the enter key code
-        {
-            console.log("enter button 10 works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
-            var userInput = $("#name10").val().trim();
-            var column = 10;
-            displayColor(userInput, column);
-        }
-    });
-    $("#name11").keypress(function(e) {
-        var key = e.which;
-        if (key == 11) // the enter key code
-        {
-            console.log("enter button 6 works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
-            var userInput = $("#name11").val().trim();
-            var column = 11;
-            displayColor(userInput, column);
-        }
-    });
-    $("#name12").keypress(function(e) {
-        var key = e.which;
-        if (key == 13) // the enter key code
-        {
-            console.log("enter button 12 works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
-            var userInput = $("#name12").val().trim();
-            var column = 12;
-            displayColor(userInput, column);
-        }
+
+    // jquery functions for when college color boxes are clicked on.
+    // modals will open up with more information
+
+    $("#color1").click(function() {
+        alert("click button works");
     });
 });
