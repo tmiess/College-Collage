@@ -60,7 +60,6 @@ $(document).ready(function() {
     function findCollege(e) {
         if (e.target !== e.currentTarget) {
             var clickedItem = e.target.id;
-            alert("Hello " + clickedItem);
         }
         e.stopPropagation();
     }
@@ -70,12 +69,8 @@ $(document).ready(function() {
         if (key == 13) // the enter key code
         {
             var clickedItem = e.target.id;
-            console.log("enter button for " + clickedItem + " works");
-            // $('input[name = butAssignProd]').click();
-            // return false;
             var userInput = $("#" + clickedItem).val().trim();
             var clickedColor = "color" + clickedItem;
-            console.log("hey tyler the clickedColor should be color1 and it is... " + clickedColor);
             displayColor(userInput, clickedColor);
         }
     });
