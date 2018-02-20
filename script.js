@@ -9,16 +9,14 @@ var color = ["#9e1b32", "#cc0033", "#8c1d40", "#9D2235", "#e87722", "#1d3c34", "
     "#c50505", "#8C1515"
 ];
 
-var column;
-
-function displayColor(userInput, column) {
+function displayColor(userInput, clickedColor) {
     var collegeName = userInput.toUpperCase();
     console.log("finding color for: " + collegeName);
     if (college.includes(collegeName)) {
         var newColor = color[college.indexOf(collegeName)];
         console.log("color code for " + collegeName + " is " + newColor);
-        $("#color" + column).css("background-color", newColor);
-        $("#color" + column).text(collegeName);
+        $("#" + clickedColor).css("background-color", newColor);
+        $("#" + clickedColor).text(collegeName);
         testForMatch(color, newColor);
     }
     else {
@@ -71,19 +69,18 @@ $(document).ready(function() {
         var key = e.which;
         if (key == 13) // the enter key code
         {
-            console.log("enter button x works");
+            var clickedItem = e.target.id;
+            console.log("enter button for " + clickedItem + " works");
             // $('input[name = butAssignProd]').click();
             // return false;
-            var userInput = $("#namex").val().trim();
-            var column = 9;
-            displayColor(userInput, column);
+            var userInput = $("#" + clickedItem).val().trim();
+            var clickedColor = "color" + clickedItem;
+            console.log("hey tyler the clickedColor should be color1 and it is... " + clickedColor);
+            displayColor(userInput, clickedColor);
         }
     });
 
     // jquery functions for when college color boxes are clicked on.
     // modals will open up with more information
 
-    $("#color1").click(function() {
-        alert("click button works");
-    });
 });
