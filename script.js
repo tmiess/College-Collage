@@ -48,12 +48,38 @@ function testForMatch(color, newColor) {
 
 $(document).ready(function() {
     console.log("script.js connected");
-
     console.log("number of colleges: " + college.length);
     console.log("number of colors: " + color.length);
 
-    // jquery functions for when colleges are entered
+    //jquery for autocomplete
+    $('input.autocomplete').autocomplete({
+        data: {
+            "North Carolina": [
+                { "tid": 159, "cid": 0, "did": 0, "region": "Boston College", "name": "Eagles", "abbrev": "BC", "pop": 161, "city": "Chestnut Hill", "state": "MA", "latitude": 42.330, "longitude": -71.166 },
+                { "tid": 105, "cid": 0, "did": 0, "region": "Clemson", "name": "Tigers", "abbrev": "CLEM", "pop": 215, "city": "Clemson", "state": "SC", "latitude": 34.678, "longitude": -82.839 },
+                { "tid": 109, "cid": 0, "did": 0, "region": "Florida State", "name": "Seminoles", "abbrev": "FSU", "pop": 211, "city": "Tallahassee", "state": "FL", "latitude": 30.442, "longitude": -84.298 },
+                { "tid": 18, "cid": 0, "did": 0, "region": "Louisville", "name": "Cardinals", "abbrev": "UL", "pop": 302, "city": "Louisville", "state": "KY", "latitude": 38.25, "longitude": -85.766 },
+                { "tid": 31, "cid": 0, "did": 0, "region": "North Carolina State", "name": "Wolfpack", "abbrev": "NCST", "pop": 289, "city": "Raleigh", "state": "NC", "latitude": 35.786, "longitude": -78.682 },
+                { "tid": 9, "cid": 0, "did": 0, "region": "Notre Dame", "name": "Fighting Irish", "abbrev": "ND", "pop": 311, "city": "South Bend", "state": "IN", "latitude": 41.672, "longitude": -86.255 },
+                { "tid": 66, "cid": 0, "did": 0, "region": "Syracuse", "name": "Orange", "abbrev": "CUSE", "pop": 254, "city": "Syracuse", "state": "NY", "latitude": 43.046, "longitude": -76.144 },
+                { "tid": 141, "cid": 0, "did": 0, "region": "Wake Forest", "name": "Demon Deacons", "abbrev": "WAKE", "pop": 179, "city": "Winston-Salem", "state": "NC", "latitude": 36.102, "longitude": -80.260 },
+                { "tid": 0, "cid": 0, "did": 1, "region": "Duke", "name": "Blue Devils", "abbrev": "DUKE", "pop": 320, "city": "Durham ", "state": "NC", "latitude": 35.988, "longitude": -78.907 },
+                { "tid": 145, "cid": 0, "did": 1, "region": "Georgia Tech", "name": "Yellow Jackets", "abbrev": "GT", "pop": 175, "city": "Atlanta", "state": "GA", "latitude": 33.775, "longitude": -84.394 },
+                { "tid": 47, "cid": 0, "did": 1, "region": "Miami", "name": "Hurricanes ", "abbrev": "CANES", "pop": 273, "city": "Coral Gables", "state": "FL", "latitude": 25.75, "longitude": -80.271 },
+                { "tid": 8, "cid": 0, "did": 1, "region": "North Carolina", "name": "Tar Heels", "abbrev": "UNC", "pop": 312, "city": "Chapel Hill", "state": "NC", "latitude": 35.933, "longitude": -79.033 },
+                { "tid": 76, "cid": 0, "did": 1, "region": "Pittsburgh", "name": "Panthers", "abbrev": "PITT", "pop": 244, "city": "Pittsburgh", "state": "PA", "latitude": 40.439, "longitude": -79.976 },
+                { "tid": 6, "cid": 0, "did": 1, "region": "Virginia", "name": "Cavaliers", "abbrev": "UVA", "pop": 314, "city": "Charlottesville", "state": "VA", "latitude": 38.03, "longitude": -78.478 },
+                { "tid": 220, "cid": 0, "did": 1, "region": "Virginia Tech", "name": "Hokies", "abbrev": "VT", "pop": 100, "city": "Blacksburg", "state": "VA", "latitude": 37.23, "longitude": -80.417 }
+            ]
+        },
+        limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+        onAutocomplete: function(val) {
+            // Callback function when value is autcompleted.
+        },
+        minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+    });
 
+    // jquery functions for when colleges are entered
     var theParent = document.querySelector("#theMothership");
     theParent.addEventListener("click", findCollege, false);
 
