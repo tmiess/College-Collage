@@ -75,6 +75,10 @@ $(document).ready(function() {
         limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
         onAutocomplete: function(val) {
             // Callback function when value is autcompleted.
+            var clickedItem = e.target.id;
+            var userInput = $("#" + clickedItem).val().trim();
+            var clickedColor = "color" + clickedItem;
+            displayColor(userInput, clickedColor);
         },
         minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
     });
