@@ -16,7 +16,6 @@ function displayColor(userInput, clickedColor) {
         var newColor = color[college.indexOf(collegeName)];
         console.log("color code for " + collegeName + " is " + newColor);
         $("#" + clickedColor).css("background-color", newColor);
-        $("#" + clickedColor).text(collegeName);
         testForMatch(color, newColor);
     }
     else {
