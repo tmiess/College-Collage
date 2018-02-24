@@ -153,4 +153,6 @@ $(document).ready(function() {
     // jquery functions for when college color boxes are clicked on.
     // modals will open up with more information
 
+    $('.modal').modal();
+
 });
