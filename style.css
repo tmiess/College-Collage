@@ -86,6 +86,10 @@
     background-color: transparent;
 }
 
+.modal-content {
+    color: black;
+}
+
 html {
     font-family: GillSans, Calibri, Trebuchet, sans-serif;
     text-align: center;

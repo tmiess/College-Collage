@@ -153,6 +153,13 @@ $(document).ready(function() {
     // jquery functions for when college color boxes are clicked on.
     // modals will open up with more information
 
-    $('.modal').modal();
+});
 
+$(document).ready(function() {
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal({
+        ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+            console.log(modal, trigger);
+        },
+    });
 });
