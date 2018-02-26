@@ -9,6 +9,7 @@ var color = ["#9e1b32", "#cc0033", "#8c1d40", "#9D2235", "#e87722", "#1d3c34", "
     "#c50505", "#8C1515"
 ];
 
+//takes the user input and finds the associated color
 function displayColor(userInput, clickedColor) {
     var collegeName = userInput.toUpperCase();
     console.log("finding color for: " + collegeName);
@@ -17,6 +18,8 @@ function displayColor(userInput, clickedColor) {
         console.log("color code for " + collegeName + " is " + newColor);
         $("#" + clickedColor).css("background-color", newColor);
         $("#" + clickedColor).text("click me!");
+        $("#" + clickedColor).attr("title", collegeName);
+        console.log("new title for #" + clickedColor + " is " + this.title);
         testForMatch(color, newColor);
     }
     else {
@@ -24,9 +27,9 @@ function displayColor(userInput, clickedColor) {
     }
 }
 
+//takes the college team color and see whether or not it has a match
+//matches found so far: arizona and rutgers, iowa state and nebraska, nc state and utah and texas tech!
 function testForMatch(color, newColor) {
-    //takes the college team color and see whether or not it has a match
-    //matches found so far: arizona and rutgers, iowa state and nebraska, nc state and utah and texas tech!
     var indexes = [],
         i = -1;
     while ((i = color.indexOf(newColor, i + 1)) != -1) {
@@ -128,7 +131,7 @@ $(document).ready(function() {
         minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
     });
 
-    // jquery functions for when colleges are entered
+    //jquery functions for when colleges are entered
     var theParent = document.querySelector("#theMothership");
     theParent.addEventListener("click", findCollege, false);
 
@@ -139,6 +142,7 @@ $(document).ready(function() {
         e.stopPropagation();
     }
 
+    //jquery function for when enter button is hit
     $(".blackboard").keypress(function(e) {
         var key = e.which;
         if (key == 13) // the enter key code
@@ -150,16 +154,20 @@ $(document).ready(function() {
         }
     });
 
+    //test to make sure that we are grabbing the correct college name when clicking on a column
+    $("a").click(function(event) {
+        console.log("college name is " + event.target.title);
+    });
+
     // jquery functions for when college color boxes are clicked on.
     // modals will open up with more information
-
-});
-
-$(document).ready(function() {
-    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     $('.modal').modal({
-        ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
-            console.log(modal, trigger);
+        ready: function(modal, trigger, event) { // Callback for Modal open. Modal, trigger, and event parameters available.
         },
     });
+
+    $("a").click(function(event) {
+        $("#modal1 h4").text(this.title);
+    })
+
 });
