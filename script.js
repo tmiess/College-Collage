@@ -1,3 +1,7 @@
+var cheerio = require("cheerio");
+var express = require("express");
+var request = require("request");
+
 var college = ["ALABAMA", "ARIZONA", "ARIZONA STATE", "ARKANSAS", "AUBURN", "BAYLOR", "BOSTON COLLEGE", "CALIFORNIA", "CLEMSON", "COLORADO", "DUKE", "FLORIDA", "FLORIDA STATE", "GEORGIA", "GEORGIA TECH", "ILLINOIS",
     "INDIANA", "IOWA", "IOWA STATE", "KANSAS", "KANSAS STATE", "KENTUCKY", "LOUISIANA STATE", "LOUISVILLE", "MARYLAND", "MIAMI", "MICHIGAN", "MICHIGAN STATE", "MINNESOTA", "MISSISSIPPI", "NEBRASKA", "NORTH CAROLINA STATE",
     "NORTH CAROLINA", "NORTHWESTERN", "NOTRE DAME", "OHIO STATE", "OKLAHOMA", "OKLAHOMA STATE", "OREGON", "OREGON STATE", "PENN STATE", "PITTSBURGH", "PURDUE", "RUTGERS", "SOUTH CAROLINA", "SYRACUSE", "TENNESSEE", "TEXAS",
@@ -9,7 +13,25 @@ var color = ["#9e1b32", "#cc0033", "#8c1d40", "#9D2235", "#e87722", "#1d3c34", "
     "#c50505", "#8C1515"
 ];
 
-//takes the user input and finds the associated color
+//initialize express
+var app = express();
+
+//scraper tools--after this is built, set this up in new file or place it in the jquery function when a column is clicked on. this info will be placed in the modal that pops up after the clicked on
+app.get("/scrape", function(req, res, collegeName) {
+    request("http://www.ncaa.com/schools" + collegeName, function(error, response, html) {
+
+        // Load the HTML into cheerio and save it to a variable
+        // '$' becomes a shorthand for cheerio's selector commands, much like jQuery's '$'
+        var $ = cheerio.load(html);
+
+        //look for the "div" tag with class "school-meta"
+        $("div.school-meta")
+
+        // here we will scrape data from ncaa.com and place it into modal that has been created after school color is clicked on
+    });
+});
+
+//takes the user input, makes sure it matches one of our colleges, and finds the associated color
 function displayColor(userInput, clickedColor) {
     var collegeName = userInput.toUpperCase();
     console.log("finding color for: " + collegeName);
@@ -19,7 +41,9 @@ function displayColor(userInput, clickedColor) {
         $("#" + clickedColor).css("background-color", newColor);
         $("#" + clickedColor).text("click me!");
         $("#" + clickedColor).attr("title", collegeName);
-        console.log("new title for #" + clickedColor + " is " + this.title);
+        $("#" + clickedColor).attr("shade", newColor);
+        console.log("title attr for #" + clickedColor + " is " + collegeName);
+        console.log("shade attr for #" + clickedColor + " is " + newColor);
         testForMatch(color, newColor);
     }
     else {
@@ -46,7 +70,7 @@ function testForMatch(color, newColor) {
     else {
         console.log("unique color!");
     }
-    console.log("number of " + newColor + ":" + indexes.length);
+    console.log("number of " + newColor + ": " + indexes.length);
 }
 
 $(document).ready(function() {
@@ -154,11 +178,6 @@ $(document).ready(function() {
         }
     });
 
-    //test to make sure that we are grabbing the correct college name when clicking on a column
-    $("a").click(function(event) {
-        console.log("college name is " + event.target.title);
-    });
-
     // jquery functions for when college color boxes are clicked on.
     // modals will open up with more information
     $('.modal').modal({
@@ -167,7 +186,10 @@ $(document).ready(function() {
     });
 
     $("a").click(function(event) {
-        $("#modal1 h4").text(this.title);
-    })
+        console.log("this.title = " + this.title);
+        console.log("this.shade = " + this.shade);
 
+        $("#modal1 h4").text(this.title);
+        $("#modal1 p").text("Conference:");
+    });
 });
